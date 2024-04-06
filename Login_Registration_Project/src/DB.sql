@@ -27,13 +27,13 @@ CREATE TABLE PassReset(
 );
 
 
-INSERT INTO users(username,passwd,email,created) VALUES ('Admin','admin123','sajamatr20@gmail.com',CURRENT_TIME());
+INSERT INTO users(username,passwd,email,created) VALUES ('Admin','****','*****',CURRENT_TIME());
 INSERT INTO Roles(username,priv) VALUES ('Admin',1);
 
-CREATE USER 'SignAdmin'@'localhost' IDENTIFIED BY 'b04b95cf6ef5538f68314c*#$%&@%2cd4af998aed9e83123cadc3502e8cb6';
-GRANT SELECT,INSERT,UPDATE,DELETE ON ProjectDB.users TO 'SignAdmin'@'localhost';
+CREATE USER 'SignAdmin'@'localhost' IDENTIFIED BY '*****';
+GRANT SELECT,INSERT,UPDATE,DELETE ON ProjectDB.users TO '****'@'localhost';
 GRANT SELECT ON ProjectDB.roles TO 'SignAdmin'@'localhost';
-GRANT SELECT,INSERT,DELETE ON ProjectDB.PassReset TO 'SignAdmin'@'localhost';
+GRANT SELECT,INSERT,DELETE ON ProjectDB.PassReset TO '*****'@'localhost';
 FLUSH PRIVILEGES;
 
 
