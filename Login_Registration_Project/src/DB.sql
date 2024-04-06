@@ -32,7 +32,7 @@ INSERT INTO Roles(username,priv) VALUES ('Admin',1);
 
 CREATE USER 'SignAdmin'@'localhost' IDENTIFIED BY '*****';
 GRANT SELECT,INSERT,UPDATE,DELETE ON ProjectDB.users TO '****'@'localhost';
-GRANT SELECT ON ProjectDB.roles TO 'SignAdmin'@'localhost';
+GRANT SELECT ON ProjectDB.roles TO '******'@'localhost';
 GRANT SELECT,INSERT,DELETE ON ProjectDB.PassReset TO '*****'@'localhost';
 FLUSH PRIVILEGES;
 
