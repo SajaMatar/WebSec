@@ -5,7 +5,7 @@ import requests
 import sys
 
 if len(sys.argv) != 2:
-    print("Usage: python sol.py $URL")
+    print("Usage: python solution.py $URL")
     exit()
 
 
