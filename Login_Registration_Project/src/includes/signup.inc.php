@@ -26,6 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_SESSION["beenInsignup"])) {
             $_SESSION["errors"] ["regid_email"] = "already registered email!";
          }
       }
+      
+      if(badPassComp($passwd)){
+         $_SESSION["errors"] ["pass"] = "Password should be at least 8 characters in length, should include at least one upper case letter, one number and one special character.";
+      }
    }
 
    // send them back to signup.php if any Errors where found ... 
