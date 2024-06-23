@@ -8,7 +8,9 @@ CREATE TABLE users (
     passwd VARCHAR(255) NOT NULL,
     email VARCHAR(100),
     created DATETIME NOT NULL DEFAULT CURRENT_TIME(),
-    invCounter INT NOT NULL DEFAULT 0
+    invCounter INT NOT NULL DEFAULT 0,
+    2faCode VARCHAR(255) NOT NULL DEFAULT 0 ,
+    imageName VARCHAR(255)
 );
 
 
@@ -26,7 +28,17 @@ CREATE TABLE PassReset(
     created INT(20) UNSIGNED NOT NULL DEFAULT UNIX_TIMESTAMP()
 );
 
+CREATE TABLE posts(
+    ID INT NOT NULL AUTO_INCREMENT ,
+    username VARCHAR(30) NOT NULL ,
+    title VARCHAR(255) NOT NULL,
+    Published DATETIME DEFAULT now(),
+    Post TEXT NOT NULL,
 
+    PRIMARY KEY (ID),
+    FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE
+)
+    
 INSERT INTO users(username,passwd,email,created) VALUES ('Admin','****','*****',CURRENT_TIME());
 INSERT INTO Roles(username,priv) VALUES ('Admin',1);
 
