@@ -40,3 +40,21 @@ function  ZeroInvCounterU($PDO,$username){
     $statmnt->bindParam(":username",$username);
     $statmnt->execute();
 }
+
+
+function is2FAen($PDO,$username){
+    $query = "select 2faCode from users where username= :user";
+    $stm = $PDO->prepare($query);
+    $stm->bindParam(":user",$username);
+    $stm->execute();
+
+    $result = $stm->fetch();
+  
+
+    if ($result['2faCode'] === "0"){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
