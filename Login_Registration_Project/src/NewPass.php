@@ -34,7 +34,7 @@ $_SESSION['beenInNewPass']=1;
         </form>
         <?php
 
-require_once "./includes/signupMVC/singupV.inc.php";
+require_once "./includes/passResetMVC/passResetV.inc.php";
 showErrors();
 ?>
     </div>
