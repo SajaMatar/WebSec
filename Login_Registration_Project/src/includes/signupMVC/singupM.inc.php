@@ -29,3 +29,53 @@ function insertUser($PDO,$username,$passwd,$email){
     $statmnt->bindParam(":email",$email);
     $statmnt->execute(); 
 }
+
+
+function enable_2FA($PDO,$username,$secret){
+    $query = "UPDATE users SET 2faCode = :sec where username = :user ;";
+    $statmnt = $PDO->prepare($query);
+    $statmnt->bindParam(":sec",$secret);
+    $statmnt->bindParam(":user",$username);
+    $statmnt->execute(); 
+
+}
+
+function is2FAen($PDO,$username){
+    $query = "select 2faCode from users where username= :user";
+    $stm = $PDO->prepare($query);
+    $stm->bindParam(":user",$username);
+    $stm->execute();
+
+    $result = $stm->fetch();
+  
+
+    if ($result['2faCode'] === "0"){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+function get2FAkey($PDO,$username){
+    $query = "select 2faCode from users where username= :user";
+    $stm = $PDO->prepare($query);
+    $stm->bindParam(":user",$username);
+    $stm->execute();
+    $result = $stm->fetch();
+    return $result['2faCode'] ;
+}
+
+
+function badPassComp($password){
+    $uppercase   = preg_match('@[A-Z]@', $password);
+    $lowercase   = preg_match('@[a-z]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+    
+    if(!$uppercase || !$lowercase || !$specialChars || strlen($password) < 8) {
+        return true;
+    }else{
+       return false;
+    }
+
+}
