@@ -1,7 +1,5 @@
 # Regestrtion/Login System
-simple login and regestrtion system with an sql database.
-
-it supports recaptua, 2FA, file upload, blog posts.
+simple secure login and regestrtion system with an sql database that supports recaptua, 2FA, file upload, blog posts.
 
 
  
