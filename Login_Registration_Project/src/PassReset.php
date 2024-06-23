@@ -1,6 +1,10 @@
 <?php
 require_once "./includes/sessionMang.inc.php";
 $_SESSION["beenInPassReset"]="1"; 
+if(isset($_SESSION['csrfToken'])){
+    unset($_SESSION['csrfToken']);
+}
+$_SESSION['csrfToken']=bin2hex(random_bytes(30))
 ?>
 
 <!DOCTYPE html>
