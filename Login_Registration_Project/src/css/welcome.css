@@ -7,7 +7,7 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 100px auto;
+    margin: 120px auto;
     text-align: center;
     padding: 20px;
     background-color: #fff;
@@ -36,3 +36,29 @@ p {
 .btn:hover {
     background-color: #0056b3;
 }
+
+.circular-image {
+    width: 150px; /* Adjust the size of the circular container */
+    height: 150px; /* Adjust the size of the circular container */
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Ensures the image stays within the circular container */
+    margin: 0 auto;
+  }
+  
+  .circular-image img {
+    width: 100%; /* Makes the image fill the circular container */
+    height: auto;
+    display: block;
+  }.circular-image {
+    width: 300px; /* Adjust the size of the circular container */
+    height: 300px; /* Adjust the size of the circular container */
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Ensures the image stays within the circular container */
+    margin: 0 auto;
+  }
+  
+  .circular-image img {
+    width: 100%; /* Makes the image fill the circular container */
+    height: auto;
+    display: block;
+  }  
